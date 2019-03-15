@@ -33,7 +33,10 @@ BROWSE through phonebook
 IF the inputentry is equal to the entryofphonebook, return the phonebookpage 
 
 4.Using the pseudocode you wrote for the previous question, implement it in any computer language of your choice.
+
 Java Script
+
+const phonebook = ["Daisuke Goh", "Travis Blair"];
 
 const inputentry = "Daisuke Goh"
 const searchresult = phonebook.map(x == inputentry);
