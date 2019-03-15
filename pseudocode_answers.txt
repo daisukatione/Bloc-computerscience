@@ -1,0 +1,40 @@
+Short Answer
+1.Why do programmers use pseudocode?
+A. To express what code should do without using a particular language's syntax. 
+
+
+2.If you run pseudocode on your computer what would happen?
+A. The computer will not be able to interpret the pseudocode.
+
+Programming Assignment
+Write the following algorithms in pseudocode:
+
+1.Create a function that takes two numbers and prints out the greater number.
+A. 
+INPUT first number 
+INPUT second number
+IF 
+the first number is greater than the second number, return the first number. 
+ELSE
+return the second number
+
+2.Create a function that prints out the numbers from 1 to 100.
+INIT total to 0
+INPUT １
+WHILE the number is not 100
+  ADD 1 to total
+  INPUT 1
+END WHILE
+RETURN total
+
+3.Create a function that searches for a specific entry in a phonebook.
+INIT inputentry to a given entryname 
+BROWSE through phonebook
+IF the inputentry is equal to the entryofphonebook, return the phonebookpage 
+
+4.Using the pseudocode you wrote for the previous question, implement it in any computer language of your choice.
+Java Script
+
+const inputentry = "Daisuke Goh"
+const searchresult = phonebook.map(x == inputentry);
+console.log(searchresult);
