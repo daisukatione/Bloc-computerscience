@@ -1,0 +1,93 @@
+Exercise 
+
+1.
+Clean code is essential to achieve readability, ease of maintenance, and simplicity of your code.
+This becomes more important as you work with a large scaled team. 
+
+2.
+I would think of airplanes, knowing most of the monitorings and controlls are done by computers.
+If the codes in the computer dones not work correctly, pilot will not only fail to understand how the plane is 
+working as well as controlling it properly. 
+
+3.
+No.
+
+Refactored code:
+FUNCTION do(x, y)               // Creating a new function
+ IF y = "F" THEN               // Check if y is equal "F"
+ SET z to (x−32) * (5/9)       // Formula to convert degrees fahrenheit to celsius
+ ELSE IF y = "C" THEN          // If y not equal to "F", check if equal to "C"
+ SET z to x * 1.8000 + 32.00   // Formula to convert degrees celsius to fahrenheit
+ END IF
+PRINT z                       // Print result
+END FUNCTION
+
+4.
+Yes
+
+5.
+
+a.
+
+
+FUNCTION checkOutCustomer(subTotal, discountRate, paymentType)
+SET totaldue = subTotal * discountRate + (subTotal * tax)
+   PRINT "Your total due is: " + totaldue
+
+   IF paymentType = 'CASH' THEN
+       CALL getPayment RETURNING amount
+       PRINT "Change due: " + amount - totaldue)
+   ELSE IF paymentType = 'CREDIT CARD' THEN
+       CALL getPayment RETURNING amount
+       PRINT "Your credit card has been charged: " + totaldue
+   END IF
+END FUNCTION
+
+b.
+
+FUNCTION checkoutBook(book, guest)
+ IF guest.accountActive NOT(guest.hasOverdueBooks) guest.outstandingFees = 0 THEN
+    APPEND book to guest.books
+    SET book.status to "Checked Out"
+    PRINT "Your books have been issued."
+ END IF
+  ELSE
+     PRINT "Unable to check out book."
+END FUNCTION
+
+c.
+
+CLASS Customeroperation
+
+ FUNCTION displayBalance
+    PRINT balance
+ END FUNCTION
+
+ FUNCTION deposit(amount)
+    SET balance to balance + amount
+ END FUNCTION
+
+ FUNCTION withdraw(amount)
+     IF balance > amount THEN
+       SET balance to balance - amount
+     END
+ END FUNCTION
+
+CLASS Bankoperation
+
+ FUNCTION creditCardOffer
+     IF NOT(customer.hasCreditCard) THEN
+         CALL offerCreditCard
+
+ FUNCTION checkStatus
+     IF NOT(customer.hasCheckingAccount) THEN
+         CALL offerCheckingAccount
+     END
+ END FUNCTION
+
+ ....
+ ....
+ ....
+
+END
+
