@@ -91,3 +91,33 @@ CLASS Bankoperation
 
 END
 
+Programming Questions.
+
+6. Squares
+
+const numbers = [1,2,3,4,4];
+
+var add = (accumulator, a) => {
+return accumulator + a;
+}
+
+const sum = numbers.reduce(add)
+
+const integer = Number.isInteger(sum);
+
+const root = Math.sqrt(sum);
+
+function returnvalue() {
+
+if (integer === true) {
+  return root;
+      } else {
+   return sum;    
+   return "The square root of" + sum + "is approximately" + root + "."  
+      }
+}
+
+7. Duplicates
+
+
+
