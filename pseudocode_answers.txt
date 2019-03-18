@@ -12,19 +12,19 @@ Write the following algorithms in pseudocode:
 1.Create a function that takes two numbers and prints out the greater number.
 A. 
 INPUT first number 
+
 INPUT second number
 IF 
 the first number is greater than the second number, return the first number. 
-ELSE
-return the second number
+  ELSE
+    return the second number
 
 2.Create a function that prints out the numbers from 1 to 100.
 INIT total to 0
 INPUT １
-WHILE the number is not 100
-  ADD 1 to total
-  INPUT 1
-END WHILE
+  WHILE the number is not 100
+    ADD 1 to total INPUT 1
+  END WHILE
 RETURN total
 
 3.Create a function that searches for a specific entry in a phonebook.
@@ -40,4 +40,4 @@ const phonebook = ["Daisuke Goh", "Travis Blair"];
 
 const inputentry = "Daisuke Goh"
 const searchresult
-FOR through phonebook and if array key is equal to inputentry return key
+  FOR through phonebook and if array key is equal to inputentry return key
