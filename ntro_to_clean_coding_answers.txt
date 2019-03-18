@@ -13,13 +13,13 @@ working as well as controlling it properly.
 No.
 
 Refactored code:
-FUNCTION do(x, y)               // Creating a new function
- IF y = "F" THEN               // Check if y is equal "F"
- SET z to (x−32) * (5/9)       // Formula to convert degrees fahrenheit to celsius
- ELSE IF y = "C" THEN          // If y not equal to "F", check if equal to "C"
- SET z to x * 1.8000 + 32.00   // Formula to convert degrees celsius to fahrenheit
+FUNCTION do(temperature, scale)               
+ IF scale = "F" THEN               
+ SET newteperature to (temperature − 32) * (5/9)       
+ ELSE IF scale = "C" THEN          
+ SET newteperature to temperature * 1.8000 + 32.00   
  END IF
-PRINT z                       // Print result
+PRINT newteperature                       
 END FUNCTION
 
 4.
@@ -46,13 +46,13 @@ END FUNCTION
 b.
 
 FUNCTION checkoutBook(book, guest)
- IF guest.accountActive NOT(guest.hasOverdueBooks) guest.outstandingFees = 0 THEN
+ IF guest.accountActive AND NOT(guest.hasOverdueBooks) AND guest.outstandingFees = 0 THEN
     APPEND book to guest.books
     SET book.status to "Checked Out"
     PRINT "Your books have been issued."
- END IF
   ELSE
      PRINT "Unable to check out book."
+ END IF
 END FUNCTION
 
 c.
@@ -118,6 +118,21 @@ if (integer === true) {
 }
 
 7. Duplicates
+
+const numbers = [1,2,3,4,4];
+
+function checkduplicate() {
+  for (i = 0; i < numbers.length; i++) {
+    for (x = 0, x < numbers.length; x++;) {
+      if (i != x) {
+        if (numbers[i] == numbers[x]) {
+          return true;
+        }
+      } 
+    }
+  }
+}
+
 
 
 
