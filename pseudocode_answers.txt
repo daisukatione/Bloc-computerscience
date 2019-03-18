@@ -39,5 +39,5 @@ Java Script
 const phonebook = ["Daisuke Goh", "Travis Blair"];
 
 const inputentry = "Daisuke Goh"
-const searchresult = phonebook.map(x == inputentry);
-console.log(searchresult);
+const searchresult
+FOR through phonebook and if array key is equal to inputentry return key
