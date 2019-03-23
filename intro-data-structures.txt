@@ -1,0 +1,36 @@
+1.
+
+a)
+const array = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+const position = array.indexOf("Josh");
+
+b)
+const array = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+array.push("Mary");
+
+c)
+const array = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+const position = array.indexOf("Josh");
+
+d)
+const array = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+function position(Emily) {
+  if (array.includes(Emily) === true) {
+    return arrayindexOf(Emily); } else {
+      return "No name"; 
+    }
+  }
+
+e)
+const array = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+array.splice(1, 0, "Melissa")
+
+f)
+const array = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+array.splice(3, 1)
+
+2.
+A menu at a restaurant 
+
+3.
+A Data Structure organizes data in a way that renders it easier to use and manipulate.
