@@ -1,0 +1,38 @@
+1.
+The difference between and stack and queue is that stack applies the LIFO concept where queue applies the FIFO concept. 
+
+2.
+The commoness between is that it preserves element in the style of orders.
+
+3.
+Stack 
+
+Programming Questions
+
+1.
+function reverse(BLOC) {
+var splitString = BLOC.split("");
+var reversedArray = splitString.reverse();
+var newArray = reversedArray.join();
+return newArray;  
+}
+
+2.
+const queue = ["A", "B", "C"];
+queue.pop();
+
+1.
+class Queue {
+     constructor(queue) {
+         this.queue = [];
+     }
+
+enqueue(element) {
+    queue.push(element);
+}
+
+dequeue() {
+    queue.shift();
+}
+
+}
