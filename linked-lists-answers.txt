@@ -1,0 +1,56 @@
+1.
+Bellow are the pros/cons of using linked lists 
+Pros: Efficient in memory consumption
+Cons: Inefficient to access an element 
+
+2. 
+The DNS server on internet appears to have a simular concept, since it has the domain name information to route 
+accesses as well as refering to other DSN servers to find the destination if does not have the information. 
+
+Programming Questions
+
+Programmed in Java Script 
+
+1. 
+The pseudocode should include a while loop to find the end of the linked lists to add a new node to it.
+Bellow is a functional code written in Java Script. 
+
+    push(element) {
+        const newNode = element; 
+        newNode.next = null;  
+        if (!head) {
+          head = newNode;
+          return head;
+        } else {
+          current = head;
+          while(current.next != null){
+          current = current.next;
+           }
+            current.next = node;
+            return head;
+  }  
+    }
+}
+
+2.
+
+removeDuplicates () {
+    current = head;
+    while (current && current.next){
+        if(current.val == current.next.val) {
+            current.next == current.next.next;
+        } else {
+            current = current.next;
+        }
+    }
+}
+
+
+3.
+
+reverseLinkedList () {
+    current = head;
+    while(current.next != null) {
+        current.next = null
+    }
+}
