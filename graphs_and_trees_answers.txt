@@ -1,0 +1,147 @@
+1. What is a binary tree and what makes it unique to other trees?
+A Binary Tree is a data structure in which each Node may point to a left child and a right child.
+
+2. What is a heuristic?
+These are guesses that an algorithm makes to solve a complex problem sooner by sacrificing accuracy.
+
+3. What is another problem besides the shortest-path problem that requires the use of heuristics?
+Finding the answer to a combination lock
+
+4. What is the difference between a depth-first search and a breadth-first search?
+While the depth first searches starting at the root and explores as deep as posssible, the breadth-first 
+approach explores neighber nodes first before moving to the next level of neighbers. 
+
+5. Explain in your own words what an undirected, a-cyclic, unweighted graph is.
+It is a graph which is 
+1) The start and end is ambiguous 
+2) Does not form a loop
+3) With no weight between each nodes 
+
+6. What kind of graph is a binary search tree?
+A Binary Search Tree (BST) orders each Node in the Tree based on some 
+quantifiable value. Nodes increase in value as we travel right, 
+and decrease in value towards the left.
+
+Programming Questions
+
+//Please see bellow code both for 1. and 2. 
+//Please see tests commented for each.
+
+function BinarySearchTree() {
+    this.root = null;
+}
+
+BinarySearchTree.prototype.makeNode = function(value) {
+    var node = {};
+    node.value = value;
+    node.left = null;
+    node.right = null;
+    return node;
+};
+
+BinarySearchTree.prototype.add = function(value) {
+    var currentNode = this.makeNode(value);
+    if (!this.root) {
+        this.root = currentNode;
+    } else {
+        this.insert(currentNode);
+    }
+    return this;
+};
+
+BinarySearchTree.prototype.insert = function(currentNode) {
+    var value = currentNode.value;
+    var traverse = function(node) {
+        //if value is equal to the value of the node, ignore
+        //and exit function since we don't want duplicates
+        if (value === node.value) {
+            return;
+        } else if (value > node.value) {
+            if (!node.right) {
+                node.right = currentNode;
+                return;
+            } else
+                traverse(node.right);
+        } else if (value < node.value) {
+            if (!node.left) {
+                node.left = currentNode;
+                return;
+            } else
+                traverse(node.left);
+        }
+    };
+    traverse(this.root);
+};
+
+
+BinarySearchTree.prototype.contains = function(value) {
+    var node = this.root;
+    var traverse = function(node) {
+        if (!node) return false;
+        if (value === node.value) {
+            return true;
+        } else if (value > node.value) {
+            return traverse(node.right);
+        } else if (value < node.value) {
+            return traverse(node.left);
+        }
+    };
+    return traverse(node);
+};
+
+
+//TESTS for 1.
+
+var bst = new BinarySearchTree();
+bst.add(40).add(25).add(78).add(10).add(32);
+console.log('BS1', bst);
+
+console.log(bst.contains(40));
+
+function distanceFromNode (node, value) {
+  if(node == null) {
+    return undefined;
+  }
+  if(node.value == value) {
+    return 0;
+  } else {
+    if(value < node.value) {
+      return 1+distanceFromNode(node.left,value);
+    } else if(value > node.value){
+      return 1+distanceFromNode(node.right,value);
+    }
+  }
+}
+
+function findLowestCommonAncestor (node, value1, value2) {
+  if(node == null) {
+    return null;
+  }
+  if(node.value > value1 && node.value > value2) {
+    return findLowestCommonAncestor(node.left, value1, value2);
+  }
+  if(node.value < value1 && node.value < value2) {
+    return findLowestCommonAncestor(node.right, value1, value2);
+  }
+  return node;
+}
+
+function distanceBetweenTwoNodes(root, value1, value2) {
+  var common = findLowestCommonAncestor(root, value1, value2);
+
+  if(common == null || common == undefined) {
+    return -1;
+  }
+  if( distanceFromNode(common,value1) == -1 ) {
+    return -1;
+  }
+  if( distanceFromNode(common,value2) == -1 ) {
+    return -1;
+  }
+  return distanceFromNode(common,value1) + distanceFromNode(common,value2);
+}
+
+
+//TESTS for 2.
+
+console.log(distanceBetweenTwoNodes(bst.root, 40, 25));
