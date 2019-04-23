@@ -32,25 +32,63 @@ Bellow is a functional code written in Java Script.
     }
 }
 
-2.
+2. and 3.
 
-removeDuplicates () {
-    current = head;
-    while (current && current.next){
-        if(current.val == current.next.val) {
-            current.next == current.next.next;
-        } else {
-            current = current.next;
-        }
-    }
+See bellow code
+
+function LinkedList() {
+    this.head = null;
+    this.tail = null;
 }
 
+function Node(value, next, prev) {
+    this.value = value;
+    this.next = next;
+    this.prev = prev;
+}
 
-3.
+LinkedList.prototype.addTotail = function(value) {
+    var newNode = new Node(value, null, this.tail);
 
-reverseLinkedList () {
-    current = head;
+    if(this.tail) this.tail.next = newNode;
+    else this.head = newNode;
+    this.tail = newNode;
+};
+
+var ll = new LinkedList();
+
+ll.addTotail("A");
+ll.addTotail("B");
+ll.addTotail("A");
+ll.addTotail("C");
+ll.addTotail("B");
+ll.addTotail("D");
+ll.addTotail("E");
+
+
+LinkedList.prototype.removeDuplicates = function(list) {
+    current = list.head
+  
     while(current.next != null) {
-        current.next = null
+              fast  = current.next;
+        while (fast.next != null) {
+            if(current.value === fast.value) {
+                fast.prev.next = fast.next;
+                fast = fast.next;
+            } else {
+                fast = fast.next;
+            }
+        } current = current.next;
     }
-}
+};
+
+LinkedList.prototype.reverseOrder = function(list) {
+    current = list.tail;
+    while(current.prev != null) {
+        current.next = list.head;
+        current = current.prev;
+    } 
+};
+
+ll.removeDuplicates(ll);
+console.log(ll);
