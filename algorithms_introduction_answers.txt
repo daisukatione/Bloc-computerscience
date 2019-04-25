@@ -2,46 +2,47 @@
 
 Making coffee;
 
-INIT cofee machine;
-Add coffee beans to coffee maker;
-Add water to coffee machine; 
-Start coffee machine;
-Pour coffee to cup;
+FUNCTION makingCoffee(coffeeCup)
+    WHILE coffeeCup = empty
+        CALL startCoffeemachine with coffeebeans 
+    END WHILE
+END FUNCTION
 
 Washing dishes;
 
-Init new dish;
-Add detergent to new dish;
-Scrub new dish;
-Rinse new dish;
-Dry new dish;
+FUNCTION washingDishes(dishes)
+    WHILE dishes are dirty
+        CALL washDishes 
+    END WHILE
+END FUNCTION
 
 Brushing teeth;
 
-Init tooth brush;
-Add tooth paste to tooth brush;
-Scrup teeth with tooth brush;
-Rinse mounth and tooth brush;
+FUNCTION brushTeath(teath)
+    FOR all teath
+        CALL brushTeath
+    FOR END
+END FUNCTION
 
 2. 
-1. Boolean (Binary) 
+1. Boolean (Binary)  created by Gearge Boole
 This algorithm is widely recognized as the 
 foundation of modern computer coding - 
 It is still in use today especially in computer circuitry.
 
-2. QR
+2. QR created by John G. F. Francis
 Its basic function is to perform QR decomposition, 
 writing the matrix as a product of an orthogonal matrix 
 and an upper triangular matrix, and multiplying the 
 factors in the reverse order, and iterating.
 
-3.JPEG and Other Data Compression Algorithms
+3.JPEG and Other Data Compression Algorithms by Joint Photographic Experts Group
 They have become so widespread today that they are used 
 whenever you download a file to your computer, 
 play music or video games, stream videos, use a database
  or engage with The Cloud. 
 
 3. 
-A good algorithms against a bad one, is lean that it accomplishes a goal
-with less processing, also easy to understand, which improves maintainablity 
+A good algorithms against a bad one, is efficient that it accomplishes a goal
+faster. Also it is also important that it is easy to understand, which improves maintainablity 
 and expandability.   
