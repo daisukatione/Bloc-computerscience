@@ -35,11 +35,11 @@ the number of items.
 O(n)
 
 7. Determine the time complexity of the following snippet of code.
-O(n)
+O(n^2)
 
 8. Determine the time complexity of the following snippet of code. 
 It is commonly known as the Fibonacci sequence.
-O(n)
+O(log n)
 
 9. Out of the code snippets you just saw, which is the most time efficient?
-They all have the same time complexity.
+The most efficient code is that of 6. 
