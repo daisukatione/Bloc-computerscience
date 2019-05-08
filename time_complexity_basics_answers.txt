@@ -39,7 +39,7 @@ O(n^2)
 
 8. Determine the time complexity of the following snippet of code. 
 It is commonly known as the Fibonacci sequence.
-O(log n)
+O(1)
 
 9. Out of the code snippets you just saw, which is the most time efficient?
 The most efficient code is that of 6. 
