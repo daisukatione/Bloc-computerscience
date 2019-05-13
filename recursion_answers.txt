@@ -1,0 +1,33 @@
+1.Define and compare recursion and iteration.
+recursion: The technique where a procedure (i.e., a function) calls itself with parameters 
+incrementally moving toward one of the base cases.
+iteration: The technique of utilizing a loop to repeat a process.
+
+2.Name five algorithms that are commonly implemented by recursion.
+Fast Exponentiation 
+Greatest Common Divisor (Euclid’s Algorithm) 
+Fibonacci Numbers 
+Rank Search
+Height of a Binary Tree 
+
+3.When should you use recursion, and when should you avoid recursion? Give examples for each.
+When you should use recursions: When an algorithm can be defined as a combination of sub-results starting with known cases.
+When you should avoid recursion: When there is high tendency to repeat calculations, since it 
+might introduce performance concerns that outweighs the cost of iterative implementation.
+
+4.Compare the recursive and iterative solutions to the three algorithms from the checkpoint 
+(factorial, maximum, and fibonacci). What is similar, and what is different?
+
+What is similar: Setting the base case (error when number < 0)
+What is different: Where recursive solutions calls itslef multiple times to reach the goal, 
+iteration simply go throughs each data and do the needed calculation. 
+
+5.Given a multi-dimensional collection (such as an array) where the number of dimensions is unknown, 
+write a recursive algorithm to count the number of items in the entire collection.
+
+6.A palindrome is a word or phrase whose spelling is the same either direction (e.g., racecar). 
+Write a recursive algorithm to determine if a given word or phrase is a palindrome.
+
+7.Google Easter Egg: Google the term "recursion". 
+Google will prompt you with "Did you mean: recursion". 
+Explain why this behavior exhibits properties of recursion.
