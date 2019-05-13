@@ -1,4 +1,5 @@
 1.Define and compare recursion and iteration.
+
 recursion: The technique where a procedure (i.e., a function) calls itself with parameters 
 incrementally moving toward one of the base cases.
 iteration: The technique of utilizing a loop to repeat a process.
@@ -11,6 +12,7 @@ Rank Search
 Height of a Binary Tree 
 
 3.When should you use recursion, and when should you avoid recursion? Give examples for each.
+
 When you should use recursions: When an algorithm can be defined as a combination of sub-results starting with known cases.
 When you should avoid recursion: When there is high tendency to repeat calculations, since it 
 might introduce performance concerns that outweighs the cost of iterative implementation.
@@ -25,9 +27,41 @@ iteration simply go throughs each data and do the needed calculation.
 5.Given a multi-dimensional collection (such as an array) where the number of dimensions is unknown, 
 write a recursive algorithm to count the number of items in the entire collection.
 
+Written by Java Script
+
+function countElements(array){
+  if(array.length){
+    return 1 + countElements(array.slice(1))
+  } else {
+    return 0;
+  }
+}
+
 6.A palindrome is a word or phrase whose spelling is the same either direction (e.g., racecar). 
 Write a recursive algorithm to determine if a given word or phrase is a palindrome.
+
+Written in Javascript
+
+var isPalindrome = function(str) {
+    var strLen = str.length;
+    if (strLen === 0 || strLen === 1) {
+        return true;
+    }
+    
+    if (str[0] === str[strLen - 1]) {
+        return isPalindrome( str.slice(1, strLen - 1) );
+    }
+    
+    return false;
+};
+
+console.log(isPalindrome('racecar'));
 
 7.Google Easter Egg: Google the term "recursion". 
 Google will prompt you with "Did you mean: recursion". 
 Explain why this behavior exhibits properties of recursion.
+
+This is very interesting! By displaying "Did you mean: recursion" means that
+Google implemented the same function (searching for "recursion") as a result
+of searching for "recursion", which exhibits the core of recursion that a certain 
+function call itelf within it. 
