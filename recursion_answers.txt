@@ -31,7 +31,7 @@ Written by Java Script
 
 function countElements(array){
   if(array.length){
-    return 1 + countElements(array.slice(1))
+    return array[0].length + countElements(array.slice(1))
   } else {
     return 0;
   }
@@ -64,4 +64,4 @@ Explain why this behavior exhibits properties of recursion.
 This is very interesting! By displaying "Did you mean: recursion" means that
 Google implemented the same function (searching for "recursion") as a result
 of searching for "recursion", which exhibits the core of recursion that a certain 
-function call itelf within it. 
+function call itelf within 
