@@ -1,0 +1,81 @@
+Short Answer
+
+1.What is a real-life scenario that uses linear search?
+
+Going through a photo album from the begining to find a picture you are in.
+
+2.What is a real-life scenario that uses binary search?
+
+Finding a book from a library by the number of the book.
+You go the middle rack and see if the book number you are looking 
+for is higher or lower and omit the other half. By continuing this
+you will be able to find the number. 
+
+3.Given the alphabetically sorted collection in this checkpoint, 
+how many iterations would it take to find the value G using linear search?
+
+7
+
+4.Given the alphabetically sorted collection in this checkpoint, 
+how many iterations would it take to find the value G using binary search?
+
+4
+
+5.Given an unsorted collection of a million items, which algorithm would you 
+choose between linear search and binary search? Explain your reasoning.
+
+I would choose linear search, since binary search will be useless without 
+items being sorted. 
+
+6.Given a sorted collection of a million items, which algorithm would you choose
+between linear search and binary search? Explain your reasoning.
+
+I would choose binary, since binary is more likely to be an efficient way to go through mass 
+number of items, as long as it is sorted. 
+
+Programming Assignment:
+
+1.You and a friend have set a wager to see who can find the 
+word "Albatross" in the dictionary the fastest. Write a program to allow you to win the bet.
+
+Written in Javascript
+
+var binarySearch = function(array, value) {
+    var guess,
+        min = 0,
+        max = array.length - 1;	
+
+    while(min <= max){
+        guess = Math.floor((min + max) /2);
+	if(array[guess] === value)
+	    return guess;
+	else if(array[guess] < value)
+	    min = guess + 1;
+	else
+	    max = guess - 1;	
+     }
+	
+     return -1;
+}
+
+binarySearch(dictionary, "Albatross")
+
+2.You work at a pet store, and a child has asked you to net 
+the only white-spotted goldfish from the fish tank. Write a 
+program that will help you net the right fish.
+
+Written in Javascript
+
+ var linearSearch = function(collection, target) {
+   var result = null, value;
+   for(var i = 0; i < collection.length; i++) {
+     value = collection[i];
+     if(value === target){
+       result = i;
+       break;
+     }
+   }
+   return result;
+ };
+
+ linearSearch(fishtank, "white-spotted goldfish")
