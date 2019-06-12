@@ -39,7 +39,7 @@ WHERE gender = f AND weight > 35;
 Display all of the information about all dogs that are not Shepherd mixes.
 
 A. 
-SELECT id, name, gender, age, weight, breed, intake_date, in_foster
+SELECT *
 FROM dogs
 WHERE breed NOT LIKE '%shephered%';
 
@@ -67,7 +67,7 @@ All the names and ages from the given table.
 Display all the information about all of the available cats.
 
 A. 
-SELECT id, name, gender, age, intake_date, adoption_date
+SELECT *
 FROM cats;
 
 Display the name and sex of all cats who are 7 years old.
