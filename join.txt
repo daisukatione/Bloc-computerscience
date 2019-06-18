@@ -1,0 +1,106 @@
+1. How do you find related data held in two separate data tables?
+
+A.
+By utilizing the foreign key and primary key in each data tables. 
+
+2. Explain, in your own words, the difference between an INNER JOIN, LEFT OUTER JOIN, and RIGHT OUTER JOIN. 
+Give a real-world example for each.
+
+A.
+INNER JOIN: Combining the data points that only have relation in each other.
+Example: 
+Table 1: Student data
+Table 2: Student attendance data
+Extracting students data from table 1 who only attended the class combining with attendance data table 2.
+
+LEFT JOIN: Remains all data from table 1 and extracts data from table 2 which only has relationship to table 1.
+Exmaple: Adding attendace data(Table 2) to table 1 for all students.  
+
+RIGHT JOIN: Remains all data from table 2 and extracts data from table 1 which only has relationship to table 2.
+Example: 
+Table 1: Organization position list
+Table 2: Employee list  
+Create a list if positions with assigned emplyee as well as NULL for vacant positions. 
+
+3. Define primary key and foreign key. Give a real-world example for each.
+
+A.
+Primary KEY: Unique id for each data point. Example: employee number
+Foreign KEY: A primary key of another data table which not unique in another table: Example: department number
+
+4. Define aliasing.
+
+A.
+Short names for tables to use instead of longer names. 
+
+5. Change this query so that you are using aliasing:
+SELECT professor.name, compensation.salary, compensation.vacation_days 
+FROM professor 
+JOIN compensation 
+ON professor.id = compensation.professor_id;
+
+A.
+SELECT p.name, c.salary, c.vacation_days 
+FROM professor AS p
+JOIN compensation AS c
+ON p.id = c.professor_id;
+
+
+6. Why would you use a NATURAL JOIN? Give a real-world example.
+It identifies shared colums in each datatable and combines data based on it.
+Example: comvining data table that shares most of its colums, such as demographic information. 
+
+7. Using this Employee schema and data, write queries to find the following information:
+List all employees and all shifts.
+
+A.
+SELECT *
+FROM employees AS e
+JOIN shifts AS s
+ON e.id = s.id;
+
+
+8. Using this Adoption schema and data, please write queries to retrieve the following information and include the results:
+
+Create a list of all volunteers. If the volunteer is fostering a dog, include each dog as well.
+
+A.
+SELECT *
+FROM volunteers AS v
+JOIN dogs AS d
+ON v.foster_dog_id = d.id;
+
+The cat's name, adopter's name, and adopted date for each cat adopted within the past month to be 
+displayed as part of the "Happy Tail" social media promotion which posts recent successful adoptions.
+
+A.
+SELECT *
+FROM cats AS c
+LEFT JOIN cat_adoptions AS ca
+ON  c.id = ca.cat_id
+WHERE ca.date > '2019-05-15';
+
+Create a list of adopters who have not yet chosen a dog to adopt.
+
+A.
+SELECT *
+FROM adopters AS a
+RIGHT JOIN dog_adoptions AS d
+ON a.id != d.adopter_id;
+
+Lists of all cats and all dogs who have not been adopted.
+
+A.
+
+
+The name of the person who adopted Rosco.
+
+A.
+
+9. Using this Library schema and data, write queries applying the following scenarios and include the results:
+
+To determine if the library should buy more copies of a given book, 
+please provide the names and position, in order, of all of the patrons with 
+a hold (request for a book with all copies checked out) on "Advanced Potion-Making".
+List all of the library patrons. If they have one or more books checked out,
+list the books with the patrons.
