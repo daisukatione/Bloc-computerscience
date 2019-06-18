@@ -91,16 +91,47 @@ ON a.id != d.adopter_id;
 Lists of all cats and all dogs who have not been adopted.
 
 A.
+SELECT *
+FROM cats AS c
+LEFT JOIN cat_adoptions as ca
+ON c.id = ca.cat_id
+WHERE ca.adopter_id IS NULL ;
 
+SELECT *
+FROM dogs AS d
+LEFT JOIN dog_adoptions as da
+ON d.id = da.dog_id
+WHERE da.adopter_id IS NULL ;
 
 The name of the person who adopted Rosco.
 
 A.
+SELECT *
+FROM adopters AS a
+LEFT JOIN dog_adoptions AS da
+ON a.id = da.adopter_id
+WHERE da.dog_id = 10007 ;
 
 9. Using this Library schema and data, write queries applying the following scenarios and include the results:
 
 To determine if the library should buy more copies of a given book, 
 please provide the names and position, in order, of all of the patrons with 
 a hold (request for a book with all copies checked out) on "Advanced Potion-Making".
+
+A.
+SELECT *
+FROM patrons AS p
+LEFT JOIN holds AS h
+ON p.id = h.patron_id
+WHERE h.isbn = '9136884926';
+
 List all of the library patrons. If they have one or more books checked out,
 list the books with the patrons.
+
+A.
+SELECT *
+FROM patrons AS p
+JOIN transactions AS t
+ON p.id = t.patron_id
+JOIN books AS b
+ON b.isbn = t.isbn;
