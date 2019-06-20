@@ -128,9 +128,8 @@ WHERE h.isbn = '9136884926';
 List all of the library patrons. If they have one or more books checked out,
 list the books with the patrons.
 
-A.
-SELECT *
-FROM patrons AS p
-LEFT JOIN transactions AS t
+A.SELECT *
+FROM transactions AS t
+RIGHT JOIN patrons AS p
 ON p.id = t.patron_id 
-JOIN books AS b ON b.isbn = t.isbn AND checked_in_date IS NULL;
+LEFT JOIN books AS b ON b.isbn = t.isbn AND t.checked_in_date is null;
